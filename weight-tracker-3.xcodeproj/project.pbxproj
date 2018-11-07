@@ -7,23 +7,39 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		756CB73399C779EF8C86412D /* Pods_weight_tracker_3.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A8DB2329320ACAF2750B13C /* Pods_weight_tracker_3.framework */; };
+		B568F8442191FF9C00E4F663 /* WeighinTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568F8432191FF9C00E4F663 /* WeighinTableViewCell.swift */; };
+		B568F8462193834100E4F663 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568F8452193834100E4F663 /* SettingsViewController.swift */; };
 		B5B458EE2187567500EE93E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458ED2187567500EE93E5 /* AppDelegate.swift */; };
-		B5B458F02187567500EE93E5 /* FirstViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458EF2187567500EE93E5 /* FirstViewController.swift */; };
-		B5B458F22187567500EE93E5 /* SecondViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458F12187567500EE93E5 /* SecondViewController.swift */; };
+		B5B458F02187567500EE93E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458EF2187567500EE93E5 /* HomeViewController.swift */; };
+		B5B458F22187567500EE93E5 /* FollowViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458F12187567500EE93E5 /* FollowViewController.swift */; };
 		B5B458F52187567500EE93E5 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B458F32187567500EE93E5 /* Main.storyboard */; };
 		B5B458F72187567900EE93E5 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B5B458F62187567900EE93E5 /* Assets.xcassets */; };
 		B5B458FA2187567900EE93E5 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B5B458F82187567900EE93E5 /* LaunchScreen.storyboard */; };
+		B5B459022187576C00EE93E5 /* LogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B459012187576C00EE93E5 /* LogViewController.swift */; };
+		B5B4590421875B8300EE93E5 /* NewEntryViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B4590321875B8300EE93E5 /* NewEntryViewController.swift */; };
+		B5B45907218A1B8200EE93E5 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B5B45906218A1B8100EE93E5 /* GoogleService-Info.plist */; };
+		B5B45909218A1E2500EE93E5 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B45908218A1E2500EE93E5 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0C6298E780C8D528B3187C6F /* Pods-weight-tracker-3.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weight-tracker-3.debug.xcconfig"; path = "Pods/Target Support Files/Pods-weight-tracker-3/Pods-weight-tracker-3.debug.xcconfig"; sourceTree = "<group>"; };
+		4A8DB2329320ACAF2750B13C /* Pods_weight_tracker_3.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_weight_tracker_3.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B568F8432191FF9C00E4F663 /* WeighinTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WeighinTableViewCell.swift; sourceTree = "<group>"; };
+		B568F8452193834100E4F663 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B5B458EA2187567500EE93E5 /* weight-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weight-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B458ED2187567500EE93E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		B5B458EF2187567500EE93E5 /* FirstViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstViewController.swift; sourceTree = "<group>"; };
-		B5B458F12187567500EE93E5 /* SecondViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SecondViewController.swift; sourceTree = "<group>"; };
+		B5B458EF2187567500EE93E5 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		B5B458F12187567500EE93E5 /* FollowViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FollowViewController.swift; sourceTree = "<group>"; };
 		B5B458F42187567500EE93E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		B5B458F62187567900EE93E5 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B5B458F92187567900EE93E5 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		B5B458FB2187567900EE93E5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B5B459012187576C00EE93E5 /* LogViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogViewController.swift; sourceTree = "<group>"; };
+		B5B4590321875B8300EE93E5 /* NewEntryViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewEntryViewController.swift; sourceTree = "<group>"; };
+		B5B45906218A1B8100EE93E5 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B5B45908218A1E2500EE93E5 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C27920053874D8DCDE721F8E /* Pods-weight-tracker-3.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-weight-tracker-3.release.xcconfig"; path = "Pods/Target Support Files/Pods-weight-tracker-3/Pods-weight-tracker-3.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +47,29 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				756CB73399C779EF8C86412D /* Pods_weight_tracker_3.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		3DF08215B46041974F09DCF6 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0C6298E780C8D528B3187C6F /* Pods-weight-tracker-3.debug.xcconfig */,
+				C27920053874D8DCDE721F8E /* Pods-weight-tracker-3.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		B5B458E12187567400EE93E5 = {
 			isa = PBXGroup;
 			children = (
 				B5B458EC2187567500EE93E5 /* weight-tracker-3 */,
 				B5B458EB2187567500EE93E5 /* Products */,
+				3DF08215B46041974F09DCF6 /* Pods */,
+				B84C0850BCEC78A71664C79B /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -57,14 +85,28 @@
 			isa = PBXGroup;
 			children = (
 				B5B458ED2187567500EE93E5 /* AppDelegate.swift */,
-				B5B458EF2187567500EE93E5 /* FirstViewController.swift */,
-				B5B458F12187567500EE93E5 /* SecondViewController.swift */,
+				B5B45908218A1E2500EE93E5 /* LoginViewController.swift */,
+				B5B458EF2187567500EE93E5 /* HomeViewController.swift */,
+				B5B459012187576C00EE93E5 /* LogViewController.swift */,
+				B568F8432191FF9C00E4F663 /* WeighinTableViewCell.swift */,
+				B5B4590321875B8300EE93E5 /* NewEntryViewController.swift */,
+				B5B458F12187567500EE93E5 /* FollowViewController.swift */,
+				B568F8452193834100E4F663 /* SettingsViewController.swift */,
 				B5B458F32187567500EE93E5 /* Main.storyboard */,
 				B5B458F62187567900EE93E5 /* Assets.xcassets */,
 				B5B458F82187567900EE93E5 /* LaunchScreen.storyboard */,
+				B5B45906218A1B8100EE93E5 /* GoogleService-Info.plist */,
 				B5B458FB2187567900EE93E5 /* Info.plist */,
 			);
 			path = "weight-tracker-3";
+			sourceTree = "<group>";
+		};
+		B84C0850BCEC78A71664C79B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4A8DB2329320ACAF2750B13C /* Pods_weight_tracker_3.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -74,9 +116,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B5B458FE2187567A00EE93E5 /* Build configuration list for PBXNativeTarget "weight-tracker-3" */;
 			buildPhases = (
+				39356694AD9A1FC9F0B6F2B9 /* [CP] Check Pods Manifest.lock */,
 				B5B458E62187567500EE93E5 /* Sources */,
 				B5B458E72187567500EE93E5 /* Frameworks */,
 				B5B458E82187567500EE93E5 /* Resources */,
+				DC77B0E77977F7D4C78FDFC4 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -126,6 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B5B458FA2187567900EE93E5 /* LaunchScreen.storyboard in Resources */,
+				B5B45907218A1B8200EE93E5 /* GoogleService-Info.plist in Resources */,
 				B5B458F72187567900EE93E5 /* Assets.xcassets in Resources */,
 				B5B458F52187567500EE93E5 /* Main.storyboard in Resources */,
 			);
@@ -133,14 +178,84 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		39356694AD9A1FC9F0B6F2B9 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-weight-tracker-3-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		DC77B0E77977F7D4C78FDFC4 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-weight-tracker-3/Pods-weight-tracker-3-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/BoringSSL/openssl.framework",
+				"${BUILT_PRODUCTS_DIR}/GTMSessionFetcher/GTMSessionFetcher.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleUtilities/GoogleUtilities.framework",
+				"${BUILT_PRODUCTS_DIR}/Protobuf/Protobuf.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC/GRPCClient.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-Core/grpc.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-ProtoRPC/ProtoRPC.framework",
+				"${BUILT_PRODUCTS_DIR}/gRPC-RxLibrary/RxLibrary.framework",
+				"${BUILT_PRODUCTS_DIR}/leveldb-library/leveldb.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/openssl.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GTMSessionFetcher.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleUtilities.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Protobuf.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GRPCClient.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/grpc.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/ProtoRPC.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/RxLibrary.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/leveldb.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-weight-tracker-3/Pods-weight-tracker-3-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		B5B458E62187567500EE93E5 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B5B458F22187567500EE93E5 /* SecondViewController.swift in Sources */,
+				B5B45909218A1E2500EE93E5 /* LoginViewController.swift in Sources */,
+				B5B4590421875B8300EE93E5 /* NewEntryViewController.swift in Sources */,
+				B568F8442191FF9C00E4F663 /* WeighinTableViewCell.swift in Sources */,
+				B5B458F22187567500EE93E5 /* FollowViewController.swift in Sources */,
 				B5B458EE2187567500EE93E5 /* AppDelegate.swift in Sources */,
-				B5B458F02187567500EE93E5 /* FirstViewController.swift in Sources */,
+				B5B458F02187567500EE93E5 /* HomeViewController.swift in Sources */,
+				B5B459022187576C00EE93E5 /* LogViewController.swift in Sources */,
+				B568F8462193834100E4F663 /* SettingsViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -284,6 +399,7 @@
 		};
 		B5B458FF2187567A00EE93E5 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0C6298E780C8D528B3187C6F /* Pods-weight-tracker-3.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -301,6 +417,7 @@
 		};
 		B5B459002187567A00EE93E5 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = C27920053874D8DCDE721F8E /* Pods-weight-tracker-3.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
