@@ -39,4 +39,7 @@ class LoginViewController: UIViewController {
             }
         }
     }
+    @IBAction func createAccountPressed(_ sender: Any) {
+        performSegue(withIdentifier: "loginToRegister", sender: sender)
+    }
 }
