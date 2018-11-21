@@ -1,10 +1,10 @@
 import UIKit
 import FirebaseAuth
+import Firebase
 
 class LoginViewController: UIViewController {
     
     var handle: AuthStateDidChangeListenerHandle?
-    var user: User?
     @IBOutlet weak var emailText: UITextField!
     @IBOutlet weak var passwordText: UITextField!
     
@@ -12,12 +12,9 @@ class LoginViewController: UIViewController {
         super.viewDidLoad()
         
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("auth state changed in LoginViewController")
             if(user == nil) {
                 return
             }
-            self.user = user
-            print(user!.uid)
             self.goToNextPage()
         }
     }
@@ -27,18 +24,19 @@ class LoginViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        print("unload")
+        print("unload LoginViewController")
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @IBAction func loginPressed(_ sender: Any) {
         if let email = emailText.text, let password = passwordText.text {
-            Auth.auth().signIn(withEmail: email, password: password) { (user, error) in
-                print("logged in " + (user?.user.uid)!)
+            Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
+                print("logged in " + (result?.user.uid)!)
                 self.goToNextPage()
             }
         }
     }
+    
     @IBAction func createAccountPressed(_ sender: Any) {
         performSegue(withIdentifier: "loginToRegister", sender: sender)
     }

@@ -4,27 +4,14 @@ import Firebase
 
 class LogViewController: UITableViewController {
     
-    var handle: AuthStateDidChangeListenerHandle?
-    var user: User?
     var weighins: [Dictionary<String,Any>] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("auth state changed in ViewController")
-            self.user = user
-            print(user!.uid)
-        }
     }
     
     override func viewDidAppear(_ animated: Bool) {
         self.loadWeighins()
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        print("unload")
-        Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -59,8 +46,9 @@ class LogViewController: UITableViewController {
             let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "yyyy-MM-dd"
             
-            let docKey = user!.uid + "_" + dateFormatter.string(from: date)
-            let db = Firestore.firestore()
+            let delegate = UIApplication.shared.delegate as! AppDelegate
+            let docKey = delegate.user!.uid + "_" + dateFormatter.string(from: date)
+            let db = FirestoreDelegate.db()
             db.collection("weighins").document(docKey).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
@@ -76,14 +64,10 @@ class LogViewController: UITableViewController {
     
     func loadWeighins()
     {
-        let db = Firestore.firestore()
-        
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
-        
+        let db = FirestoreDelegate.db()
+        let delegate = UIApplication.shared.delegate as! AppDelegate
         self.weighins = []
-        db.collection("weighins").whereField("user_uid", isEqualTo: user!.uid).getDocuments(completion: {
+        db.collection("weighins").whereField("user_uid", isEqualTo: delegate.user!.uid).getDocuments(completion: {
             (querySnapshot, err) in
             if let err = err {
                 print("Error getting documents: \(err)")

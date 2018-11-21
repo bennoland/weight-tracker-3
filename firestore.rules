@@ -1,7 +1,27 @@
+// to deploy run firebase deploy --only firestore:rules
+// the resource variable refers to the requested document
+// resource.data contains the current values
+// request.resource.data contains the new values attempting to be written
+// request.auth contains current user
+
+
 service cloud.firestore {
-  match /databases/{database}/documents {
-    match /{document=**} {
-      allow read, write;
+    match /databases/{database}/documents {
+        match /users/{uid} {
+            allow read;
+            allow write: if request.auth.uid == uid;
+        }
+
+        match /weighins/{uid_date} {
+            allow read;
+            allow write: if request.resource.data.user_uid == request.auth.uid;
+        }
+
+        match /followers/{follower_uid_followee_uid} {
+            allow create: if request.resource.data.follower_uid == request.auth.uid
+                && request.resource.data.is_allowed == false;
+            allow update, delete: if resource.data.followee_uid == request.auth.uid;
+            allow read;
+        }
     }
-  }
 }

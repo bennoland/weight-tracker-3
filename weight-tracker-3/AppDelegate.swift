@@ -1,11 +1,3 @@
-//
-//  AppDelegate.swift
-//  weight-tracker-3
-//
-//  Created by Ben Noland on 10/29/18.
-//  Copyright © 2018 Ben Noland. All rights reserved.
-//
-
 import UIKit
 import Firebase
 
@@ -13,11 +5,23 @@ import Firebase
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    var handle: AuthStateDidChangeListenerHandle?
+    var user: User?
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         FirebaseApp.configure()
+        
+        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
+            print("auth state changed in AppDelegate")
+            if(user == nil) {
+                print("user nil")
+                return
+            }
+            self.user = user
+            print("user uid: \(user!.uid)")
+        }
+        
         return true
     }
 
@@ -42,7 +46,4 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func applicationWillTerminate(_ application: UIApplication) {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
-
-
 }
-

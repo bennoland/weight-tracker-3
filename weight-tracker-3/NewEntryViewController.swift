@@ -6,35 +6,23 @@ class NewEntryViewController: UIViewController {
     
     @IBOutlet weak var datePicker: UIDatePicker!
     @IBOutlet weak var weightEntry: UITextField!
-    var handle: AuthStateDidChangeListenerHandle?
-    var user: User?
+    var delegate: AppDelegate!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("auth state changed in ViewController")
-            self.user = user
-        }
-    }
-    
-    override func viewDidDisappear(_ animated: Bool) {
-        Auth.auth().removeStateDidChangeListener(handle!)
+        delegate = UIApplication.shared.delegate as? AppDelegate
     }
     
     func saveToFirebase(weight:Double, date:Date) {
-        let db = Firestore.firestore()
+        let db = FirestoreDelegate.db()
         
-        let settings = db.settings
-        settings.areTimestampsInSnapshotsEnabled = true
-        db.settings = settings
         let df = DateFormatter()
         df.dateFormat = "yyyy-MM-dd"
-        let doc_name = user!.uid + "_" + df.string(from: date)
+        let doc_name = delegate.user!.uid + "_" + df.string(from: date)
         db.collection("weighins").document(doc_name).setData([
-            "date":date,
-            "weight":weight,
-            "user_uid": user!.uid
+            "date": date,
+            "weight": weight,
+            "user_uid": delegate.user!.uid
         ]){ err in
             if let err = err {
                 print("Error adding document: \(err)")
@@ -48,7 +36,6 @@ class NewEntryViewController: UIViewController {
         let weight = Double(weightEntry.text!)
         let date = datePicker.date
         
-        print("got \(weight) at \(date)")
         self.saveToFirebase(weight: weight!, date: date)
         
         // switch to log tab
