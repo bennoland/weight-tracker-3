@@ -10,5 +10,13 @@
             </PersistentString>
          </PersistentStrings>
       </ContextState>
+      <ContextState
+         contextName = "closure #1 in FollowersTableViewController.loadFollowers():FollowersTableViewController.swift">
+         <PersistentStrings>
+            <PersistentString
+               value = "data[&quot;follower_uid&quot;] as! String">
+            </PersistentString>
+         </PersistentStrings>
+      </ContextState>
    </ContextStates>
 </VariablesViewState>

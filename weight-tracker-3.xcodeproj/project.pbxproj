@@ -16,6 +16,7 @@
 		B568F8482193946300E4F663 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568F8472193946300E4F663 /* RegisterViewController.swift */; };
 		B568F84A2194A5EB00E4F663 /* FirestoreDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B568F8492194A5EB00E4F663 /* FirestoreDelegate.swift */; };
 		B568F84C2195D7B000E4F663 /* firestore.rules in Resources */ = {isa = PBXBuildFile; fileRef = B568F84B2195D7B000E4F663 /* firestore.rules */; };
+		B58C151E21B1E39500E38933 /* index.js in Resources */ = {isa = PBXBuildFile; fileRef = B58C151D21B1E39400E38933 /* index.js */; };
 		B5985B81219CC4A000E6DCD3 /* FolloweesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5985B80219CC4A000E6DCD3 /* FolloweesTableViewController.swift */; };
 		B5B458EE2187567500EE93E5 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458ED2187567500EE93E5 /* AppDelegate.swift */; };
 		B5B458F02187567500EE93E5 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B5B458EF2187567500EE93E5 /* HomeViewController.swift */; };
@@ -40,6 +41,7 @@
 		B568F8472193946300E4F663 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		B568F8492194A5EB00E4F663 /* FirestoreDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreDelegate.swift; sourceTree = "<group>"; };
 		B568F84B2195D7B000E4F663 /* firestore.rules */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = firestore.rules; sourceTree = SOURCE_ROOT; };
+		B58C151D21B1E39400E38933 /* index.js */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.javascript; name = index.js; path = functions/index.js; sourceTree = "<group>"; };
 		B5985B80219CC4A000E6DCD3 /* FolloweesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolloweesTableViewController.swift; sourceTree = "<group>"; };
 		B5B458EA2187567500EE93E5 /* weight-tracker-3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "weight-tracker-3.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		B5B458ED2187567500EE93E5 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -80,6 +82,7 @@
 		B568F84D2195D7E400E4F663 /* firestore */ = {
 			isa = PBXGroup;
 			children = (
+				B58C151D21B1E39400E38933 /* index.js */,
 				B568F84B2195D7B000E4F663 /* firestore.rules */,
 			);
 			name = firestore;
@@ -201,6 +204,7 @@
 				B5B458FA2187567900EE93E5 /* LaunchScreen.storyboard in Resources */,
 				B568F84C2195D7B000E4F663 /* firestore.rules in Resources */,
 				B5B45907218A1B8200EE93E5 /* GoogleService-Info.plist in Resources */,
+				B58C151E21B1E39500E38933 /* index.js in Resources */,
 				B5B458F72187567900EE93E5 /* Assets.xcassets in Resources */,
 				B5B458F52187567500EE93E5 /* Main.storyboard in Resources */,
 			);
