@@ -23,7 +23,7 @@ exports.syncWeighinToFeed = functions.firestore.document('weighins/{uid_date}')
     const doc = change.after.exists ? change.after.data() : change.before.data();
     const isDelete = !change.after.exists;
     const ownerUid = doc["user_uid"];
-    const date = doc["date"].toDate()
+    const date = doc["date"].toDate();
     
     const queryPromise = admin.firestore().collection("followers")
     .where("followee_uid", "==", ownerUid).get()
