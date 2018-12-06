@@ -25,5 +25,9 @@ service cloud.firestore {
             allow update, delete: if resource.data.followee_uid == request.auth.uid;
             allow read;
         }
+
+        match /feed_weighins/{uid_owner_uid_date} {
+            allow read: if resource.data.uid == request.auth.uid;
+        }
     }
 }

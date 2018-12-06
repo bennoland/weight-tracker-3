@@ -1,9 +1,10 @@
 import UIKit
 import FirebaseAuth
+import Firebase
 
-class FolloweesTableViewController: UITableViewController {
+class FeedTableViewController: UITableViewController {
     var delegate: AppDelegate!
-    var followees: [Dictionary<String,Any>] = []
+    var feedEntries: [Dictionary<String,Any>] = []
     var selectedUid: String?
     
     override func viewDidLoad() {
@@ -13,29 +14,31 @@ class FolloweesTableViewController: UITableViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        loadFollowees()
+        loadFeed()
     }
     
-    func loadFollowees() {
-
+    func loadFeed() {
+        
         let db = FirestoreDelegate.db()
-        db.collection("followers")
-            .whereField("follower_uid", isEqualTo: (self.delegate.user?.uid)!)
-            .whereField("is_allowed", isEqualTo: true)
+        db.collection("feed_weighins")
+            .whereField("uid", isEqualTo: (self.delegate.user?.uid)!)
             .getDocuments(completion: {
                 (querySnapshot, err) in
                 if let err = err {
                     print("Error: \(err)")
                     return
                 }
-                self.followees.removeAll()
+                self.feedEntries.removeAll()
                 for document in querySnapshot!.documents {
                     let data:Dictionary <String,Any> = document.data()
                     //                    print("\(document.documentID) => \(data)")
-
-                    self.followees.append([
-                        "followee_email": data["followee_email"] as! String,
-                        "followee_uid": data["followee_uid"] as! String
+                    
+                    let timestamp = data["date"] as! Timestamp
+                    self.feedEntries.append([
+                        "owner_email": data["owner_email"] as! String,
+                        "owner_uid": data["owner_uid"] as! String,
+                        "weight": data["weight"] as Any,
+                        "date": timestamp.dateValue()
                         ])
                 }
                 
@@ -49,29 +52,29 @@ class FolloweesTableViewController: UITableViewController {
     
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int)
         -> Int {
-            return followees.count
+            return feedEntries.count
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "followeeCell",
-                                                       for: indexPath) as? FolloweeTableViewCell
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: "feedCell",
+                                                       for: indexPath) as? FeedTableViewCell
             else {
                 fatalError("dequeued cell was of wrong type")
         }
         
-        let followee = self.followees[indexPath.row]
-        cell.populate(row: followee)
-        cell.buttonPressed = {
-            self.selectedUid = followee["followee_uid"] as? String
-            self.performSegue(withIdentifier: "followeesToUserProfile", sender: self)
+        let entry = self.feedEntries[indexPath.row]
+        cell.populate(row: entry)
+        cell.buttonTapAction = {
+            self.selectedUid = entry["owner_uid"] as? String
+            self.performSegue(withIdentifier: "feedToUserProfile", sender: self)
         }
         
         return cell
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "followeesToUserProfile" {
+        if segue.identifier == "feedToUserProfile" {
             if let uidToShow = selectedUid  {
                 print("here \(uidToShow)")
                 let destinationViewController = segue.destination as! UserProfileViewController

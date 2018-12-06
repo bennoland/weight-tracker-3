@@ -13,13 +13,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         FirebaseApp.configure()
         
         handle = Auth.auth().addStateDidChangeListener { (auth, user) in
-            print("auth state changed in AppDelegate")
             if(user == nil) {
-                print("user nil")
                 return
             }
             self.user = user
-            print("user uid: \(user!.uid)")
         }
         
         return true

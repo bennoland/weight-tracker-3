@@ -30,6 +30,7 @@ exports.syncWeighinToFeed = functions.firestore.document('weighins/{uid_date}')
     .then(snapshot => {
       snapshot.forEach(followerDoc => {
         const followerUid = followerDoc.data().follower_uid;
+        const followeeEmail = followerDoc.data().followee_email;
         const docId = followerUid + "_" + ownerUid + "_" + formatDate(date);
         const feedRef = admin.firestore().collection("feed_weighins").doc(docId);
         if(isDelete) {
@@ -39,7 +40,8 @@ exports.syncWeighinToFeed = functions.firestore.document('weighins/{uid_date}')
             uid: followerUid,
             owner_uid: ownerUid,
             weight: doc["weight"],
-            date: doc["date"]
+            date: doc["date"],
+            owner_email: followeeEmail
           });
         }
       });

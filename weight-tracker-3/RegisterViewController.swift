@@ -17,10 +17,8 @@ class RegisterViewController: UIViewController {
         Auth.auth().createUser(withEmail: email, password: password) { (authResult, error) in
             
             guard let user = authResult?.user else {
-                print("user not created")
                 return
             }
-            print("created user: " + user.uid)
             self.populateUserCollection(user: user)
             self.performSegue(withIdentifier: "registerToTabs", sender: sender)
         }
@@ -30,7 +28,7 @@ class RegisterViewController: UIViewController {
         let db = FirestoreDelegate.db()
         
         db.collection("users").document(user.uid).setData([
-            "uid":user.uid,
+            "uid": user.uid,
             "email": user.email!
         ]){ err in
             if let err = err {

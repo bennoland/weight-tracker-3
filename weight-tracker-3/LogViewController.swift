@@ -52,8 +52,6 @@ class LogViewController: UITableViewController {
             db.collection("weighins").document(docKey).delete() { err in
                 if let err = err {
                     print("Error removing document: \(err)")
-                } else {
-                    print("Document \(docKey) successfully removed!")
                 }
             }
             

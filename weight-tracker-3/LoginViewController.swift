@@ -24,14 +24,12 @@ class LoginViewController: UIViewController {
     }
 
     override func viewDidDisappear(_ animated: Bool) {
-        print("unload LoginViewController")
         Auth.auth().removeStateDidChangeListener(handle!)
     }
     
     @IBAction func loginPressed(_ sender: Any) {
         if let email = emailText.text, let password = passwordText.text {
             Auth.auth().signIn(withEmail: email, password: password) { (result, error) in
-                print("logged in " + (result?.user.uid)!)
                 self.goToNextPage()
             }
         }
